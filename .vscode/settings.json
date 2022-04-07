@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/1ee16e36-b5d4-493f-a2b6-5c70ea745b13/resourceGroups/sebas/providers/Microsoft.Web/sites/sebasRestApi",
+    "appService.deploySubpath": "."
+}

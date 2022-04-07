@@ -1,0 +1,15 @@
+{
+  "name": "api-rest",
+  "version": "1.0.0",
+  "description": "Trabajo en clase",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "Sebastian Garcia",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.9"
+  }
+}
