@@ -27,6 +27,10 @@
             type:String,
             required:true
         },
+        minutes: {
+            type:String,
+            required:true
+        },
         group: {
             type:String,
             required:true
