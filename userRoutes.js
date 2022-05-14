@@ -25,5 +25,21 @@
         app
         .route("/match")
         .post(userList.createNewMatch)
-        .get(userList.listAllMatcher)
+        .get(userList.listAllMatcher);
+
+        app
+        .route("/match/finish")
+        .post(userList.finishMatch);
+
+        app
+        .route("/prediction/running/:id")
+        .get(userList.getRunningPredictions)
+
+        app
+        .route("/prediction/finished/:id")
+        .get(userList.getFinishedPredictions)
+
+        app
+        .route("/prediction")
+        .post(userList.createPrediction)
     };
