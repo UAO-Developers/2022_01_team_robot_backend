@@ -19,6 +19,11 @@
             type:String,
             required:true
         },
+        points: {
+            type:String,
+            required:false,
+            default : "0"
+        },
         pwd:{
             type:String,
             required:true
