@@ -147,20 +147,23 @@ async function filterFinishedPredictions (predictions, req) {
     }
     let filteredPredictions = await Prediction.find({$and: [{userId: { $eq: req.params.id }},{isFinished : {$eq : true}}]})
     let totalPoints = 0
+    let matchPoints = 0
     for(let i = 0; i < filteredPredictions.length; i++){
         const match = await Match.findOne({$and: [{_id : filteredPredictions[i].matchId},{is_finished : {$eq : true}}]})
         if(match.local_goals == filteredPredictions[i].local_goals){
             filteredPredictions[i].isLocalGoalsGuessed = true
-            totalPoints += 5
+            matchPoints += 5
         }
         if(match.visit_goals == filteredPredictions[i].visit_goals){
             filteredPredictions[i].isVisitGoalsGuessed = true
-            totalPoints += 5
+            matchPoints += 5
         }
         if(filteredPredictions[i].isVisitGoalsGuessed && filteredPredictions[i].isLocalGoalsGuessed){
-            totalPoints += 10
+            matchPoints += 10
         }
-        filteredPredictions[i].totalPoints = totalPoints.toString()
+        filteredPredictions[i].totalPoints = matchPoints.toString()
+        totalPoints += matchPoints
+        matchPoints = 0;
     }
     const user = await User.findOneAndUpdate({_id: req.params.id}, {points : totalPoints.toString()})
     console.log(user)
