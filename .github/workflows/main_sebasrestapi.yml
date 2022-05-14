@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'sebasRestApi'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_84392412C6AD495E8E574814F55F4EB7 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E84CF1F5F5EF448ABD896ACB32599BD6 }}
           package: .
